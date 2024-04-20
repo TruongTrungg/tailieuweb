@@ -10,6 +10,8 @@
             <p style="font-size: 20px;"><strong>Tên:</strong> {{ $user->name }}</p>
             <p style="font-size: 20px;"><strong>Email:</strong> {{ $user->email }}</p>
             <p style="font-size: 20px;"><strong>Số điện thoại:</strong> {{ $user->PhoneNumber }}</p>
+            <p style="font-size: 20px;"><strong>SoThich:</strong> {{ $user->SoThich }}</p>
+
         </div>
     </div> 
 </div>

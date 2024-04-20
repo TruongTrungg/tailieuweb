@@ -1,5 +1,4 @@
 @extends('dashboard')
-
 @section('content')
     <div class="container">
         <h1>Sửa thông tin</h1>
@@ -20,6 +19,10 @@
                 <input type="tel" id="PhoneNumber" class="form-control" name="PhoneNumber" value="{{ $user->PhoneNumber }}">
             </div>
             <div class="form-group mb-3">
+                <label for="SoThich">SoThich</label>
+                <input type="tel" id="SoThich" class="form-control" name="SoThich" value="{{ $user->SoThich }}">
+            </div>
+            <div class="form-group mb-3">
                 Avatar <input type="file" id="Images" class="form-control" name="Images" required>
                 @if ($errors->has('Images'))
                     <span class="text-danger">{{ $errors->first('Images') }}</span>
@@ -29,4 +32,5 @@
             <button type="submit" class="btn btn-primary">Save Changes</button>
         </form>
     </div>
+    
 @endsection

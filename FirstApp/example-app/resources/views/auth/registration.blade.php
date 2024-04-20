@@ -43,6 +43,9 @@
                                     @endif
                                 </div>
                                 <div class="form-group mb-3">
+                                    <input type="SoThich" placeholder="Sở thích" id="SoThich" class="form-control" name="SoThich" required>
+                                </div>
+                                <div class="form-group mb-3">
                                     <div class="checkbox">
                                         <label><input type="checkbox" name="remember">Lưu Thông Tin</label>
                                     </div>

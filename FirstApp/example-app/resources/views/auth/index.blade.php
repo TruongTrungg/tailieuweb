@@ -10,6 +10,7 @@
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Images</th>
+                <th>SoThich</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -27,6 +28,7 @@
                         <p>No avatar found.</p>
                     @endif
                 </td>
+                <td> {{!! $user->SoThich !!}}</td>
                 <td>
                     <a href="{{ route('auth.detailUser', $user->id) }}" class="button-link" >View</a> |
                     <a href="{{ route('auth.editUser', $user->id) }}" class="button-link" >Edit</a> | 

